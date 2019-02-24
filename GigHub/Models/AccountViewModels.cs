@@ -79,6 +79,9 @@ namespace GigHub.Models
         [Display(Name = "Kennwort bestätigen")]
         [Compare("Password", ErrorMessage = "Das Kennwort entspricht nicht dem Bestätigungskennwort.")]
         public string ConfirmPassword { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Name { get; set; }
     }
 
     public class ResetPasswordViewModel
