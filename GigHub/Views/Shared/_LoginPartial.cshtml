@@ -5,12 +5,29 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hallo " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+<ul class="nav navbar-nav navbar-right">
+ 
+    
+
+
+    @* From Bootstrap Website *@
+    
+        <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@User.Identity.GetUserName()</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#one">Gig's I'm going</a></li>
+                <li><a class="dropdown-item" href="#one">Artist I'm following</a></li>
+                
+                
+                <div role="separator" class="dropdown-divider"></div>
+                
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Abmelden</a></li>
+            </ul>
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Abmelden</a></li>
-    </ul>
+
+
+
+</ul>
     }
 }
 else
