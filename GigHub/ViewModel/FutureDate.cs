@@ -8,12 +8,11 @@ namespace GigHub.ViewModel
     {
         public override bool IsValid(object value)
         {
-            DateTime dateTime;
-           var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "d MMM yyyy",
+            var isValid = DateTime.TryParseExact(Convert.ToString(value),
+                "dd MMM yyyy",
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
-                out dateTime);
+                out var dateTime);
            return (isValid && dateTime > DateTime.Now);
            
         }
@@ -22,12 +21,11 @@ namespace GigHub.ViewModel
     {
         public override bool IsValid(object value)
         {
-            DateTime dateTime;
-           var isValid = DateTime.TryParseExact(Convert.ToString(value),
+            var isValid = DateTime.TryParseExact(Convert.ToString(value),
                 "HH:mm",
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
-                out dateTime);
+                out var dateTime);
            return (isValid);
            
         }
